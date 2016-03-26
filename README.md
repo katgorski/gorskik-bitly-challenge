@@ -1,6 +1,5 @@
 This is Kat Gorski's submission for the data science internship code challenge
-for the internship program at bit.ly. If you wish to contact me, my email
-is kat.gorski@gmail.com and my cell phone number is 201.410.0600. 
+for the internship program at bit.ly.
 
 These scripts were written for Python 3.4.3 and run on a system running
 Ubuntu Linux 15.10, from the command line. 
@@ -31,7 +30,8 @@ missing files.
 
 The package contains the following scripts:
 
-condense_decodes.sh
+condense_decodes.sh:
+
     A small bash script concatenate the first 500k lines of each decode file in
     the new file decode_cond. It is necessary to create this file in whichever
     method you prefer before moving forward, with however many lines you need.
@@ -39,11 +39,13 @@ condense_decodes.sh
     requires that all the decode files are already unzipped. 
     Run as bash condense_decodes.sh or make an executable. 
 
-decodes_func.py
+decodes_func.py:
+
     Defines several functions used in several of the scripts presented in this
     package. Not meant to be run. 
 
-create_user_db.py
+create_user_db.py:
+
     Requires a decode_cond file to be in the working directory. 
     Reorganizes the decode event information into a simplified user database
     from all decode files in a Python dictionary format, with the following
@@ -62,7 +64,8 @@ create_user_db.py
     This information is written into the file user_db. This file is used
     downstream by calc_prob.py. 
 
-get_top_domains.py
+get_top_domains.py:
+
     Requires a decode_cond file to be in the working directory.
     Creates a list of domains with counts and generates summary statistics on the
     average number of times unique users engage with a link. This script takes no
@@ -88,14 +91,16 @@ get_top_domains.py
     moving through the whole dataset, uncommenting those lines will provide an
     idea of how this script runs and how the output is formatted. 
 
-change_for_histogram.py
+change_for_histogram.py:
+
     Takes the resulting file from get_top_domains.py (either domain_counts or
     short_url_counts, it's indicated by the user) and formats them in a way that
     the histogram.py script from the bit.ly github can process it! Use as
         python3 change_for_histogram.py DATA | ./histogram_bitly.py
     The resulting histogram will be written to STDOUT. 
 
-calc_prob.py
+calc_prob.py:
+
     Requires user_db file to be present in the working directory.
     Note: The subset of decode data I used did not have any given user click on
     more than one unique link, ie, each user I have listed only engaged with one
@@ -120,7 +125,8 @@ calc_prob.py
         python3 calc_prob.py help
     to get a reminder of the command the script takes.
 
-bayes_classifier.py
+bayes_classifier.py:
+
     A very simple, admittedly inefficient naive Bayes classifier to determine the
     country of a given user. In order to run bayesian_classifier.py, the following
     scripts need to be run:
@@ -149,5 +155,3 @@ bayes_classifier.py
     The last line of information written to STDOUT is the percent of records
     correctly indentified. Running the script as presented, I achieved 
     ~79% accuracy.
-
-

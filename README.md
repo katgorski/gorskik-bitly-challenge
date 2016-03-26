@@ -154,4 +154,5 @@ bayes_classifier.py:
     where CC is the country code. 
     The last line of information written to STDOUT is the percent of records
     correctly indentified. Running the script as presented, I achieved 
-    ~79% accuracy.
+    ~79% accuracy for the values that were able to be classified, not for the 
+    number of overall values. 
